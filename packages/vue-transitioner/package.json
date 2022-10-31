@@ -71,5 +71,19 @@
         "preset": "default"
       }
     }
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saini-sahab/vue-transitioner.git"
+  },
+  "keywords": [
+    "vue",
+    "transitions",
+    "animation"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saini-sahab/vue-transitioner/issues"
+  },
+  "homepage": "https://github.com/saini-sahab/vue-transitioner#readme"
 }
