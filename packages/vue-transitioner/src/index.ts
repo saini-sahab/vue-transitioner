@@ -28,7 +28,7 @@ export const install: Plugin[ 'install' ] = ( app, config: VTransitionerConfig )
 
 const plugin = {
   // eslint-disable-next-line no-undef
-  version: 1,
+  version: VERSION,
   install,
 }
 
