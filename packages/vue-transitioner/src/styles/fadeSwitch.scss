@@ -1,0 +1,35 @@
+@import "./base.scss";
+
+.v-transitioner--fadeSwitch {
+  &-enter-active {
+    position: absolute !important;
+    @include animationName(vTransitioner_fadeIn);
+    @include animationDuration(0.4s);
+  }
+
+  &-leave-active {
+    position: absolute !important;
+    @include animationName(vTransitioner_fadeOut);
+    @include animationDuration(0.4s);
+  }
+}
+
+@keyframes vTransitioner_fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes vTransitioner_fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

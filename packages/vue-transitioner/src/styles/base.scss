@@ -1,0 +1,7 @@
+@mixin animationName($animName) {
+  animation-name: $animName;
+}
+
+@mixin animationDuration($duration) {
+  animation-duration: calc(#{$duration});
+}

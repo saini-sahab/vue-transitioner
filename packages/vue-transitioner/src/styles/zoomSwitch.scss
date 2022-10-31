@@ -1,0 +1,43 @@
+@import "./base.scss";
+
+.v-transitioner--zoomSwitch {
+  &-enter-active {
+    position: absolute !important;
+    @include animationName(vTransitioner_zoomIn);
+    @include animationDuration(0.4s);
+    transform-origin: center;
+  }
+
+  &-leave-active {
+    position: absolute !important;
+    @include animationName(vTransitioner_zoomOut);
+    @include animationDuration(0.8s);
+    transform-origin: center;
+  }
+}
+
+@keyframes vTransitioner_zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes vTransitioner_zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}

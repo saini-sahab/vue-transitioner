@@ -1,0 +1,41 @@
+@import "./base.scss";
+
+.v-transitioner--slideInZoomOut {
+  &-enter-active {
+    position: absolute !important;
+    @include animationName(vTransitioner_slideInRight);
+    @include animationDuration(0.4s);
+  }
+
+  &-leave-active {
+    position: absolute !important;
+    @include animationName(vTransitioner_zoomOut);
+    @include animationDuration(0.8s);
+  }
+}
+
+@keyframes vTransitioner_slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes vTransitioner_zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}

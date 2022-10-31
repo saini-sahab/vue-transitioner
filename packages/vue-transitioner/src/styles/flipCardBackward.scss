@@ -1,0 +1,21 @@
+@import "./base.scss";
+
+.v-transitioner--flipCardBackward {
+  &-enter-active {
+    transform: perspective(1000px) rotate3d(0, 1, 0, -90deg) !important;
+    transition: transform 0.25s linear;
+  }
+
+  &-enter-to {
+    transform: perspective(1000px) rotate3d(0, 1, 0, 0deg) !important;
+  }
+
+  &-leave-active {
+    transform: perspective(1000px) rotate3d(0, 1, 0, 0deg) !important;
+    transition: transform 0.25s linear;
+  }
+
+  &-leave-to {
+    transform: perspective(1000px) rotate3d(0, 1, 0, 90deg) !important;
+  }
+}

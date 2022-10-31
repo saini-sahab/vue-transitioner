@@ -1,0 +1,61 @@
+@import "./base.scss";
+
+.v-transitioner--fadeScaleRight {
+  &-enter-active {
+    opacity: 0;
+    animation-name: vTransitioner_fadeScaleInRight;
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 0.1);
+    @include animationDuration(0.45s);
+    animation-delay: 0.3s;
+  }
+
+  &-leave-active {
+    animation-name: vTransitioner_fadeScaleOutRight;
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 0.1);
+    @include animationDuration(0.45s);
+  }
+}
+
+
+@keyframes vTransitioner_fadeScaleOutRight {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+
+  33% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  66% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: translateX(10%) scale(0.9);
+    opacity: 0;
+  }
+}
+
+@keyframes vTransitioner_fadeScaleInRight {
+  0% {
+    transform: translateX(-10%) scale(0.9);
+    opacity: 0;
+  }
+
+  33% {
+    transform: translateX(-10%) scale(0.9);
+    opacity: 0;
+  }
+
+  66% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,37 @@
+@import "./base.scss";
+
+.v-transitioner--slideHorizontallyForward {
+  &-enter-active {
+    position: absolute !important;
+    @include animationName(vTransitioner_slideInLeft);
+    @include animationDuration(0.8s);
+  }
+
+  &-leave-active {
+    position: absolute !important;
+    @include animationName(vTransitioner_slideOutRight);
+    @include animationDuration(0.8s);
+  }
+}
+
+@keyframes vTransitioner_slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes vTransitioner_slideOutRight {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(100%, 0, 0);
+  }
+}
