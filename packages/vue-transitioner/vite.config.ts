@@ -9,14 +9,16 @@ export default defineConfig( {
   plugins: [
     vue(),
     dts( {
-      insertTypesEntry: true
-    } )
+      insertTypesEntry: true,
+      skipDiagnostics: false,
+      logDiagnostics: true,
+    } ),
   ],
 
   build: {
     cssCodeSplit: true,
     lib: {
-      entry: resolve( __dirname, './src/index.ts' ),
+      entry: resolve( __dirname, './src/main.ts' ),
       name: 'VueTransitioner',
     },
     rollupOptions: {

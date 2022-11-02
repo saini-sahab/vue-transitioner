@@ -6,7 +6,7 @@ import { assign } from './utils';
 
 export { type VTransitionerConfig, DefaultTransitions } from './vTransitionConfig';
 
-export const VTransitioner = PrivateTransitioner;
+export const VTransitioner: typeof PrivateTransitioner = PrivateTransitioner;
 
 declare module 'vue' {
   export interface App {
@@ -30,6 +30,6 @@ const plugin = {
   // eslint-disable-next-line no-undef
   version: VERSION,
   install,
-}
+};
 
-export default plugin
+export default plugin;

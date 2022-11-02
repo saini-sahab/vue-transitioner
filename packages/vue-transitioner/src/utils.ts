@@ -67,8 +67,9 @@ export function invariant( condition: boolean, messageWhenItFails: string | Arra
     return;
   }
 
-  const error = new Error( ...logArgs );
+  const error = new Error();
   error.name = '[VTransitioner] Invariant Violation';
+  error.message = logArgs.join( ' ' );
 
   throw error;
 }
