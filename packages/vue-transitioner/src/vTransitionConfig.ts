@@ -44,7 +44,6 @@ const defaultConfig: Required<VTransitionerConfig> = {
     [ DefaultTransitions.ZOOM_SWITCH ]: { mode: 'default' },
     [ DefaultTransitions.FADE_SCALE_LEFT ]: { mode: 'default' },
     [ DefaultTransitions.FADE_SCALE_RIGHT ]: { mode: 'default' },
-
     [ DefaultTransitions.SLIDE_IN_ZOOM_OUT ]: { mode: 'default' },
   },
 

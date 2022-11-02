@@ -1,6 +1,6 @@
 {
   "name": "vue-transitioner",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Easy transitions between two components",
   "author": "Sarthak Saini <echo8795@gmail.com>",
   "type": "module",
@@ -11,14 +11,13 @@
     "test:unit": "vitest --environment jsdom",
     "build-only": "cross-env NODE_ENV=production vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "prepublishOnly": "yarn run lint && yarn run test:unit && yarn run build",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path ../../.gitignore",
+    "prepublishOnly": "yarn run lint && yarn run build",
     "build:sass": "sass src:dist --no-source-map && npm run build:postcss",
     "build:postcss": "npx postcss ./dist/styles/*.css -d ./dist/styles"
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "main": "./dist/vue-transitioner.umd.cjs",
   "module": "./dist/vue-transitioner.js",
