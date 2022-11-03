@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, defineProps, withDefaults, computed, useSlots, watch, nextTick, onMounted, type TransitionProps, Comment } from 'vue';
+import { ref, defineProps, withDefaults, computed, useSlots, watch, nextTick, onMounted, type TransitionProps, Comment, useAttrs, type SetupContext } from 'vue';
 
 import { invariant, getAnimationDirection, validateTransitionerSlots } from './utils';
 import { config as privateConfig } from './vTransitionConfig';
@@ -50,13 +50,17 @@ const props = withDefaults( defineProps<Props> (), {
   appear: false,
 } );
 
+const attrs: VTransitionHooks = useAttrs();
+
 const allEventsToBindToTransition = computed( () => {
   const events: { [ key in VueTransitionHooks ]?: BaseTransitionHooks[key] } = {};
   let hookName: keyof typeof VueTransitionHooks;
 
   for ( hookName of Object.values( VueTransitionHooks ) ) {
-    events[ hookName ] = ( ...args: ExcludeUndefinedFromParameters ) => {
-      const hook = props[ hookName ];
+    const name = hookName;
+
+    events[ name ] = ( ...args: ExcludeUndefinedFromParameters ) => {
+      const hook = attrs[ name ];
 
       hook && hook( ...args )
     }

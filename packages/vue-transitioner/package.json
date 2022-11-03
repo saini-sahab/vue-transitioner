@@ -1,6 +1,6 @@
 {
   "name": "vue-transitioner",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Easy transitions between two components",
   "author": "Sarthak Saini <echo8795@gmail.com>",
   "type": "module",
